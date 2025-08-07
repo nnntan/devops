@@ -16,7 +16,7 @@ jobs:
         ports:
           - 27017:27017
         options: >-
-          --health-cmd "echo 'db.runCommand("ping").ok' | mongosh --quiet"
+          --health-cmd "mongosh --eval 'db.adminCommand(\"ping\")'"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -37,15 +37,27 @@ jobs:
       - name: Build application
         run: npm run build
 
+      - name: Wait for MongoDB
+        run: |
+          echo "Waiting for MongoDB to be ready..."
+          for i in {1..30}; do
+            if mongosh --eval "db.adminCommand('ping')" mongodb://127.0.0.1:27017/test >/dev/null 2>&1; then
+              echo "MongoDB is ready!"
+              break
+            fi
+            echo "Waiting... ($i/30)"
+            sleep 2
+          done
+
       - name: Run tests
         run: npm test
         env:
           NODE_ENV: test
-          MONGO_URI: mongodb://localhost:27017/imageapp_test
-          JWT_SECRET: test-secret-key-for-ci
-          CLOUDINARY_CLOUD_NAME: test
-          CLOUDINARY_API_KEY: test
-          CLOUDINARY_API_SECRET: test
+          MONGO_URI: mongodb://127.0.0.1:27017/imageapp_test
+          JWT_SECRET: test-secret-key-for-ci-actions
+          CLOUDINARY_CLOUD_NAME: test-cloud
+          CLOUDINARY_API_KEY: test-key
+          CLOUDINARY_API_SECRET: test-secret
 
   build-and-push:
     needs: test
