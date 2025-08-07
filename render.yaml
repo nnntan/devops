@@ -14,12 +14,12 @@ services:
       - key: PORT
         value: 9999
       - key: MONGO_URI
-        value: mongodb+srv://admin:admin123@cluster0.abc123.mongodb.net/imageapp?retryWrites=true&w=majority
+        value: mongodb+srv://mongoAtlas03:dfal3QmS7Xl3YdW1@cluster0.hubp7gk.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0
       - key: JWT_SECRET
-        generateValue: true
+        value: R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
       - key: CLOUDINARY_CLOUD_NAME
-        value: demo-cloud
+        value: dsjpjawiz
       - key: CLOUDINARY_API_KEY
-        value: demo-key
+        value: 671614854665137
       - key: CLOUDINARY_API_SECRET
-        value: demo-secret
+        value: LVljpmMl0AS7EuuhadZcldUht6A
