@@ -14,7 +14,7 @@ services:
       - key: PORT
         value: 9999
       - key: MONGO_URI
-        value: mongodb+srv://mongoAtlas03:dfal3QmS7Xl3YdW1@cluster0.hubp7gk.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0
+        value: mongodb+srv://mongoAtlas03:dfal3QmS7Xl3YdW1@cluster0.eltekds.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0&ssl=true&authSource=admin
       - key: JWT_SECRET
         value: R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
       - key: CLOUDINARY_CLOUD_NAME
