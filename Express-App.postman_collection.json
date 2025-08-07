@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "8adddc5d-0aba-4400-92ac-f172d3880010",
+		"name": "Express-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29641985"
+	},
+	"item": [
+		{
+			"name": "Express-Mongoose",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Voldermolt\",\r\n    \"email\": \"v@hogwart.edu.uk\",\r\n    \"password\": \"abcd1234\"\r\n    // \"name\": \"Hermione Granger\",\r\n    // \"email\": \"hg@hogwart.edu.uk\",\r\n    // \"password\": \"abcd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"v@hogwart.edu.uk\",\r\n    \"password\": \"abcd1234\"\r\n    // \"email\": \"hg@hogwart.edu.uk\",\r\n    // \"password\": \"abcd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTBhMzA5M2NmY2NkZGZkZmY3YmVmOCIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQzMTMyMTAsImV4cCI6MTc1NDMxNDExMH0.Iyzx07Xf6wb75Rbkli9OuAvELjvKJ6Eq57KnB2VOzyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/api/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTJkNTUzOWZlYWQ5NDU3MTIwOThlNyIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0NTMzNDIsImV4cCI6MTc1NDQ1NDI0Mn0.jJoQjEya7eqv_a0SKUYYDDBDeS1SJ1O3bURgx7bVQB8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"hg_updated@hogwart.edu.uk\"\r\n    \"email\": \"hg@hogwart.edu.uk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTA4YWVmMDBiMjRiNjU1ODRkODgwOSIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQzMDc1MDMsImV4cCI6MTc1NDM5MzkwM30.GpQrpHOcMuBXGrwiGHPKDhK_Zj6Au1YMxFVh-dVeR-4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/api/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTJkNWJhOWZlYWQ5NDU3MTIwOThlZiIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0NTM0NzksImV4cCI6MTc1NDQ1NDM3OX0.viWNfpohZQv9fCIbsbpqUy8IXq1Q2LdmPRk0apOnuKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTJkNWJhOWZlYWQ5NDU3MTIwOThlZiIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0NTM1MDksImV4cCI6MTc1NDQ1NDQwOX0.bQP--FfcGWPrf5r2trAj2HEFsIEhiT5Fz2T6Jh-AD7o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTJkNWJhOWZlYWQ5NDU3MTIwOThlZiIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0NTM1MDksImV4cCI6MTc1NDUzOTkwOX0.gui0DgcuRokMOvU5k6Itg7NlKvd4CclkWrB_Q0MuR34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate A.T",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTBhMzA5M2NmY2NkZGZkZmY3YmVmOCIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQzMTMyMTAsImV4cCI6MTc1NDMxNDExMH0.Iyzx07Xf6wb75Rbkli9OuAvELjvKJ6Eq57KnB2VOzyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTBhMzA5M2NmY2NkZGZkZmY3YmVmOCIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQzMTMyMTAsImV4cCI6MTc1NDM5OTYxMH0.gcaI7PNNb2xSklPLzHpKVfXC2_wAy-K6VjdCarJryVI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTM0MWQzOTYwODIyOGRiODI5YzBhYSIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0OTAwMDAsImV4cCI6MTc1NDQ5MDkwMH0.SZ0YprHo2zp0r4j7jelMGSo2yKKD6n41ktTnEFVvCdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f070682-9835-4d30-b912-f7fd1e74b3dd"
+								},
+								{
+									"key": "description",
+									"value": "This is my car",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "private",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/images/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"images",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check pending image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTMzMjM1NDQ3NjI2ZTEwMzI0NTE1MCIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0NzcxMjgsImV4cCI6MTc1NDQ3ODAyOH0.hh4iKzGkfZaJEyMDy03hYQfUXckMEIOwoC0l9JtNAW4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f070682-9835-4d30-b912-f7fd1e74b3dd"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/admin/images/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve imgs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTMzMjM1NDQ3NjI2ZTEwMzI0NTE1MCIsImVtYWlsIjoiaGdAaG9nd2FydC5lZHUudWsiLCJpYXQiOjE3NTQ0Nzc0NDAsImV4cCI6MTc1NDQ3ODM0MH0.sPecq7zmwVhTToU_Pq2tVQqRUcU76G_CEKUWig27Z2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f070682-9835-4d30-b912-f7fd1e74b3dd"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/admin/images/68932e754782e561acc72a63/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"68932e754782e561acc72a63",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del img by admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/api/admin/images/68932e754782e561acc72a63/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"admin",
+								"images",
+								"68932e754782e561acc72a63",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Public Images",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTM1M2EyZjQ4NDk1MjVlMTVmZmMzYiIsImVtYWlsIjoidkBob2d3YXJ0LmVkdS51ayIsImlhdCI6MTc1NDQ5MDMyMywiZXhwIjoxNzU0NDkxMjIzfQ.OPcS6rYgEmPPS0bgVpLk8OEM36pYZXjOoXhUDp_V4SA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"v@hogwart.edu.uk\",\r\n    \"password\": \"abcd1234\"\r\n    // \"email\": \"hg@hogwart.edu.uk\",\r\n    // \"password\": \"abcd1234\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/likes/68936526822cf6b329e4b41b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"likes",
+								"68936526822cf6b329e4b41b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTM1M2EyZjQ4NDk1MjVlMTVmZmMzYiIsImVtYWlsIjoidkBob2d3YXJ0LmVkdS51ayIsImlhdCI6MTc1NDQ5MDMyMywiZXhwIjoxNzU0NDkxMjIzfQ.OPcS6rYgEmPPS0bgVpLk8OEM36pYZXjOoXhUDp_V4SA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\":\"I love your car, can i borrow it ???\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/api/comments/68936526822cf6b329e4b41b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"comments",
+								"68936526822cf6b329e4b41b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
